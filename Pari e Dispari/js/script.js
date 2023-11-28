@@ -4,44 +4,45 @@ function randomNumber(){
 }
 
 // DEFINIZIONE FUNZIONE PER STABILIRE SE LA SOMMA DEI DUE NUMERI È PARI O DISPARI
-function isOdd(number){
-    return number % 2 === 0;
+function isOddorEven(number){
+
+    if(number % 2 === 0) {
+        return 'pari';
+    }
+    else {
+        return 'dispari';
+    }
 }    
 
 // CHIEDERE ALL'UTENTE DI SCEGLIERE PARI O DISPARI
-let OddorEven = prompt('Scegliere tra pari o dispari');
+let odd_or_even = prompt('Scegliere tra pari o dispari');
 
 // VERIFICA DELL'UTENTE SE HA INSERITO UNA SCELTA VALIDA
-if (OddorEven !== 'pari' && OddorEven !== 'dispari'){
+if (odd_or_even !== 'pari' && odd_or_even !== 'dispari'){
     alert("Per favore, inserisci 'pari' o 'dispari'.");
 }
 
 // CHIEDERE ALL'UTENTE DI INSERIRE UN NUMERO DA 1 a 5
-let UserNumber = parseInt(prompt("Inserire un numero da 1 a 5"));
+let userNumber = parseInt(prompt("Inserire un numero da 1 a 5"));
 
-console.log(OddorEven);
-console.log(UserNumber);
+console.log(odd_or_even);
+console.log(userNumber);
 
 // GENERARE UN NUMERO CASUALE PER IL COMPUTER
-let ComputerNumber = randomNumber();
+let computerNumber = randomNumber();
 
 // CALCOLARE LA SOMMA DEI DUE NUMERI
-let sum = UserNumber + ComputerNumber;
+let sum = userNumber + computerNumber;
 
 alert("La somma dei numeri è: " + sum);
 console.log(sum);
 
 // DETERMINARE SE LA SOMMA È PARI O DISPARI
-let result; 
-if (sum % 2 === 0) {
-    result = 'pari';
-}
-else {
-    result = 'dispari';
-}
+let result = isOdd(sum); 
 
 // MOSTRA IL VINCITORE
-if(result === OddorEven) {
+
+if(result === odd_or_even) {
     alert("Complimenti, hai vinto! La somma è " + result + ".");
 }
 else {
