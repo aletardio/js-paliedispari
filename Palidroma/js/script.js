@@ -1,14 +1,17 @@
 // CREAZIONE DI UNA FUNZIONE PER CAPIRE SE LA PAROLA INSERITA È PALINDROMA
 function isPalindrome(word) {
     
-    for(let i = 0; i<word.length; i++){
-        console.log(word[i]);
-    }
+    let reversed = word.split('').reverse().join('');
 
-    return(word);
+    if (reversed == word) {
+        alert('La parola inserita è palindroma')
+    }
+    else {
+        alert('La parola inserita non è palindroma')
+    }
 }
 
 // CHIEDERE ALL'UTENTE DI INSERIRE UNA PAROLA CON UN PROMPT
-let UserWord = prompt('Inserisci una parola');
+let userWord = prompt('Inserisci una parola');
 // STAMPA IN CONSOLE
-console.log(UserWord.split('').reverse().join(''));
+console.log(userWord);
